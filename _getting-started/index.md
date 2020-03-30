@@ -8,14 +8,14 @@ includeTOC: true
 redirect_from: "/getting-started.html"
 ---
 ## Try Scala without installing anything 
-You can try Scala, with access to all Scala compilers and 
-all published libraries with [Scastie](https://scastie.scala-lang.org/)
+You can try Scala in your browser, with access to all Scala compilers and 
+all published libraries with [Scastie](https://scastie.scala-lang.org/MHc7C9iiTbGfeSAvg8CKAA)
 
 ##  Installing Scala
 ### Using the Scala Installer (recommended way)
-The Scala Installer based on coursier will ensure that a JVM and standard Scala tools are installed on your system.  
+The Scala installer is a tool named `cs` that ensures that a JVM and standard Scala tools are installed on your system.  
 
-* Download coursier launcher and execute `setup` command
+* Download the tool `cs` and execute the command `setup`
 
 <div class="main-download">
     <div id="download-step-one">
@@ -34,12 +34,13 @@ For more information, read [couriser-cli documentation](https://get-coursier.io/
 1. if you don't have java 1.8 or 11 installed, download 
 Java from [Oracle Java 8](https://www.oracle.com/java/technologies/javase-jdk8-downloads.html), [
 Oracle Java 11](https://www.oracle.com/java/technologies/javase-jdk11-downloads.html), 
-or [AdoptOpenJDK 8/11](https://adoptopenjdk.net/). Refer JDK Compatibility for Scala/Java compatibility detail.
+or [AdoptOpenJDK 8/11](https://adoptopenjdk.net/). Refer [JDK Compatibility](/overviews/jdk-compatibility/overview.html) for Scala/Java compatibility detail.
 1. Install [sbt](https://www.scala-sbt.org/download.html)
 
 
 ## Create a Hello-world project with sbt
-Sbt is a build tool for Scala. sbt compiles, runs, 
+### Using command-line
+Sbt is a build tool for Scala. Sbt compiles, runs, 
 and tests your projects among other related tasks.
 
 1. `cd` to an empty folder.
@@ -61,10 +62,14 @@ create a project called "hello-world".
     - build.sbt (sbt's build definition file)
 ```
 
-More documentation can be found in the [Scala Book](/overviews/scala-book/scala-build-tool-sbt.html) 
+More documentation about sbt can be found in the [Scala Book](/overviews/scala-book/scala-build-tool-sbt.html) 
 or in the official sbt [documentation](https://www.scala-sbt.org/1.x/docs/index.html)
 
-## Open Hello-world project
+### Without using command-line
+You can skip the rest of this page and go directly to [Building a Scala Project with IntelliJ and sbt](/getting-started/intellij-track/building-a-scala-project-with-intellij-and-sbt.html#next-steps)
+
+
+## Open hello-world project
 ### Using Intellij
 1. Download and install [IntelliJ Community Edition](https://www.jetbrains.com/idea/download/)
 1. Install Scala plugin by following [the instructions on how to install IntelliJ plugins](https://www.jetbrains.com/help/idea/managing-plugins.html)
@@ -73,7 +78,7 @@ or in the official sbt [documentation](https://www.scala-sbt.org/1.x/docs/index.
 ### Using Vscode with metals 
 1. Download [VSCode](https://code.visualstudio.com/Download)
 1. Install the Metals extension from [the Marketplace](https://marketplace.visualstudio.com/items?itemName=scalameta.metals)
-1. Next, open the directory containing a `build.sbt` file. The extension activates when a *.scala or *.sbt file is opened.
+1. Next, open the directory containing a `build.sbt` file. When prompted to do so, select *Import build*.
 
 ## Run Hello World
 Open a terminal
@@ -97,8 +102,7 @@ There are a multitude of mailing lists and real-time chat channels in case you w
 
 <!-- Hidden elements whose content are used to provide OS-specific download instructions.
  -- This is handled in `resources/js/functions.js`.
- -->
-    
+ --> 
 <div style="display:none" id="stepOne-linux">
        <code class="hljs">$ curl -Lo cs https://git.io/coursier-cli-linux && chmod +x cs && ./cs setup </code> <br>
 </div>
@@ -110,12 +114,12 @@ There are a multitude of mailing lists and real-time chat channels in case you w
  
 <div style="display:none" id="stepOne-osx">
     <div class="highlight">
+        <code class="hljs">$ brew install coursier/formulas/coursier && cs setup </code> <br>
+    </div>
+    <p>Alternatively, if you don't use Homebrew</p>
+    <div class="highlight">
         <code class="hljs">$ curl -Lo cs https://git.io/coursier-cli-macos && chmod +x cs &&  (xattr -d com.apple.quarantine cs || true) && ./cs  setup </code> <br>
     </div>
-    <p>Alternatively you can use Homebrew:</p>
-        <div class="highlight">
-            <code class="hljs">$ brew install coursier/formulas/coursier && cs setup </code> <br>
-        </div>
 </div>
   
 <div style="display:none" id="stepOne-windows">
